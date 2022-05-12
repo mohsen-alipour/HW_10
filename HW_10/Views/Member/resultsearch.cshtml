@@ -1,0 +1,41 @@
+﻿
+@model List<Member>
+
+<table class="table table-hover bg-danger">
+     <tr>
+        <th>شناسه</th>
+        <th>نام</th>
+        <th>فامیل</th>
+        <th>تاریخ ثبت</th>
+        <th>تاریخ تولد</th>
+        <th>کد ملی</th>
+        <th>نوع عضویت</th>
+        <th>شماره تماس</th>
+        <th>جنسیت</th>
+        <th>عملیات</th>
+    </tr>
+ 
+    @foreach(var item in Model)
+ {     
+    <tr>
+        <th>@item.ID</th>
+        <th>@item.Name</th>
+        <th>@item.Family</th>
+        <th>@item.Date_sabt</th>
+        <th>@item.Date_birthday</th>
+        <th>@item.Codemeli</th>
+        <th>@item.Typemember</th>
+        <th>@item.Tel</th>
+        <th>@item.Gender</th>
+        <th>
+            <a class="btn btn-info" asp-area="" asp-controller="Member"asp-action="DetailMember"asp-route-id="@item.ID" >مشاهده</a>
+        </th>
+    </tr>
+}
+</table>
+
+<div> 
+        <a class="btn btn-primary" asp-area="" asp-controller="Member"asp-action="index">بازگشت به لیست</a>
+</div>
+
+

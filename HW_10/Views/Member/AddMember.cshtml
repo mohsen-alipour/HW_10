@@ -1,0 +1,62 @@
+﻿@model Member
+<h1 class="mb-5">صفحه اضافه کردن اعضاء  </h1>
+
+<form class="">
+    <div>
+      <label asp-for="ID" class="col-sm-2 col-form-label"></label>   
+      <input type="text" class="form-control" id="idproduct" asp-for="ID" disabled>
+    </div>
+
+    <div>       
+     <label asp-for="Name" class="col-sm-2 col-form-label"></label>  
+     <input type="text" class="form-control"  asp-for="Name">
+    </div>
+
+    <div>
+      <label asp-for="Family" class="col-sm-2 col-form-label"></label>  
+      <input type="text" class="form-control" id="priceproduct"asp-for="Family">
+    </div>
+
+    <div  >
+        <label asp-for="Date_sabt" class="col-sm-2 col-form-label"></label>
+        <input type="date" class="form-control" asp-for="Date_sabt">
+    </div>
+ 
+    <div >
+        <label asp-for="Date_birthday" class="col-sm-2 col-form-label"></label>
+        <input type="date" class="form-control" asp-for="Date_birthday">
+    </div>
+
+     <div>
+      <label asp-for="Codemeli" class="col-sm-2 col-form-label"></label>
+      <input type="text" class="form-control" asp-for="Codemeli">
+    </div>
+
+    <div style="padding:25px">
+        <select asp-for="Typemember" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>نوع عضویت</option>
+            <option value="1">Gold</option>
+            <option value="2">Silver</option>
+            <option value="3">Bronz</option>
+        </select>
+    </div>
+ 
+    <div>
+      <label asp-for="Tel" class="col-sm-2 col-form-label"></label>
+      <input type="text" class="form-control" asp-for="Tel">
+    </div>
+
+    <div style="padding:25px">
+        <select asp-for="Gender" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>جنسیت</option>
+            <option value="1">Mael</option>
+            <option value="2">Femal</option>
+        </select>
+    </div>
+  
+    <div>
+        <input type="submit" class="btn btn-success" asp-controller="Member" asp-action="AddMember" formmethod="post" value="ثبت"/>   
+        <a class="btn btn-primary" asp-area="" asp-controller="Member"asp-action="index">بازگشت به لیست</a>
+    </div>
+    
+</form>

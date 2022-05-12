@@ -1,0 +1,30 @@
+﻿@model List<QureryModelLibrary>
+
+<table class="table table-hover bg-danger">
+
+     <tr>
+        <th>ردیف</th>
+        <th>نام شهر</th>
+        <th>آدرس کتاب خانه</th>
+        <th>نام کتاب خانه</th>
+        <th>افراد عضو</th>
+        <th>کتاب امانی</th>
+        
+    </tr>
+  
+    @foreach(var item in Model)
+    {
+          
+        <tr>
+         <th>@item.id</th>
+        <th>@item.cityname</th>
+        <th>@item.Libararyaddress</th>
+        <th>@item.Libararyname</th>    
+        <th>@item.memberid</th>
+        </tr>
+       
+       
+
+       
+}
+</table>

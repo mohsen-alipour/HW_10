@@ -1,0 +1,51 @@
+﻿
+@model List<Member>
+
+@*<div>
+    @Model.Id
+    <br/>
+    @Model.ProductName
+    <br />
+    @Model.Price
+    <br />
+    @Model.ProductCount
+
+</div>*@
+
+<a class="btn btn-dark"asp-area=""asp-controller="Member"asp-action="AddMember">ایجاد</a>
+<a class="btn btn-dark"asp-area=""asp-controller="Member"asp-action="search">جستجو</a>
+<table class="table table-hover bg-danger">
+     <tr>
+        <th>شناسه</th>
+        <th>نام</th>
+        <th>فامیل</th>
+        <th>تاریخ ثبت</th>
+        <th>تاریخ تولد</th>
+        <th>کد ملی</th>
+        <th>نوع عضویت</th>
+        <th>شماره تماس</th>
+        <th>جنسیت</th>
+        <th>عملیات</th>
+    </tr>
+ 
+    @foreach(var item in Model)
+ {     
+    <tr>
+        <th>@item.ID</th>
+        <th>@item.Name</th>
+        <th>@item.Family</th>
+        <th>@item.Date_sabt</th>
+        <th>@item.Date_birthday</th>
+        <th>@item.Codemeli</th>
+        <th>@item.Typemember</th>
+        <th>@item.Tel</th>
+        <th>@item.Gender</th>
+        <th>
+            <a class="btn btn-info" asp-area="" asp-controller="Member"asp-action="DetailMember"asp-route-id="@item.ID" >مشاهده</a>
+            <a class="btn btn-warning" asp-area=""asp-controller="Member"asp-action="EditMember"asp-route-id="@item.ID">ویرایش</a>
+            <a class="btn btn-dark"asp-area=""asp-controller="Member"asp-action="Delete"asp-route-id="@item.ID">حذف</a>
+        </th>
+    </tr>
+}
+</table>
+
